@@ -35,7 +35,8 @@ fun SplashScreen(){
             Text(text = "From" , fontSize = 20.sp, fontWeight = FontWeight.Bold)
 
             Row {
-                Icon(painter = painterResource(id = R.drawable.meta) , contentDescription =null,
+                Icon(painter = painterResource(id = R.drawable.meta),
+                    contentDescription =null,
                     modifier = Modifier.size(35.dp),
                     tint = colorResource(id = R.color.LightGreen)
                 )
