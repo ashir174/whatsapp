@@ -56,6 +56,61 @@ fun HomeScreen() {
             msg = "Kidhar ha bhai? Baat sun....",
             time = "3:00 PM"
         ),
+
+        ChatlistModel(
+            R.drawable.atif_aslam,
+            name =  "Atif Aslam",
+            msg = "Chal 1 song ho jy",
+            time = "11:09 PM"
+        ),
+
+        ChatlistModel(
+            R.drawable.ali_zafar,
+            name = "Ali Zafar",
+            msg = "Hello bhai",
+            time = "8:36 PM"
+        ),
+
+        ChatlistModel(
+            R.drawable.ranveer_singh,
+            name = "Ranveer Singh",
+            msg = "Party at 2 AM :) ?",
+            time = "4:57 PM"
+        ),
+
+        ChatlistModel(
+            R.drawable.amir_khan,
+            name = "Amir Khan",
+            msg = "Time nahi......",
+            time = "9:02 AM"
+        ),
+
+        ChatlistModel(
+            R.drawable.trump,
+            name = "Donald Trump",
+            msg = "Noble Prize de b do saalo :)",
+            time = "5:43 PM"
+        ),
+        ChatlistModel(
+            R.drawable.thanos,
+            name = "Thanos",
+            msg = "Let me snap 1 more time:(",
+            time = "6:12 AM"
+        ),
+
+        ChatlistModel(
+            R.drawable.jokar,
+            name = "Jokar",
+            msg = "Boom!!!",
+            time = "12:02 AM"
+        ),
+
+        ChatlistModel(
+            R.drawable.rdj,
+            name = "RDJ",
+            msg = "I am Iron Man!!!",
+            time = "2:23 PM"
+        )
     )
 
     Scaffold(
