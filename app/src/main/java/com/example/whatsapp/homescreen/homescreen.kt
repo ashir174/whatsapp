@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -32,6 +33,9 @@ import com.example.whatsapp.R
 @Composable
 @Preview(showSystemUi = true)
 fun HomeScreen() {
+
+
+
     Scaffold(
         floatingActionButton = {
             FloatingActionButton(
@@ -91,6 +95,10 @@ fun HomeScreen() {
                 thickness = 2.dp,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
             )
+
+            LazyColumn() {
+
+            }
         }
     }
 }
