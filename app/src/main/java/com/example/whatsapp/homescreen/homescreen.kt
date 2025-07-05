@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -28,13 +29,34 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.whatsapp.R
+import com.example.whatsapp.presentation.chat_box.ChatlistModel
 
 
 @Composable
 @Preview(showSystemUi = true)
 fun HomeScreen() {
 
+    val chatData = listOf(ChatlistModel(
+        R.drawable.salman_khan,
+        name = "Salman Khan",
+        msg = "Hi",
+        time = "10:00 AM"
+    ),
 
+        ChatlistModel(
+            R.drawable.sharukh_khan,
+            name = "Sharukh Khan",
+            msg = "Hello",
+            time = "11:23 PM"
+        ),
+
+        ChatlistModel(
+            R.drawable.mrbeast,
+            name = "Mr Beast",
+            msg = "Kidhar ha bhai? Baat sun....",
+            time = "3:00 PM"
+        ),
+    )
 
     Scaffold(
         floatingActionButton = {
@@ -97,7 +119,9 @@ fun HomeScreen() {
             )
 
             LazyColumn() {
-
+                items(chatData){
+                    ChatDesign(chatlistModel = it)
+                }
             }
         }
     }

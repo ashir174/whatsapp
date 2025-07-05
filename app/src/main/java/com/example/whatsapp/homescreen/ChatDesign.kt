@@ -14,7 +14,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -23,23 +25,24 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.ModifierLocalBeyondBoundsLayout
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.whatsapp.presentation.chat_box.ChatlistModel
 import org.intellij.lang.annotations.JdkConstants
 
 @Composable
-@Preview(showSystemUi = true)
-fun ChatDesign() {
+fun ChatDesign(
+    chatlistModel: ChatlistModel
+) {
 
     Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
 
-        Spacer(modifier = Modifier.height(100.dp))
-
         Image(
-            painter = painterResource(id = R.drawable.salman_khan),
+            painter = painterResource(id = chatlistModel.image),
             contentDescription = null,
             modifier = Modifier
                 .size(60.dp)
@@ -47,22 +50,27 @@ fun ChatDesign() {
             contentScale = ContentScale.Crop,
         )
 
-        Spacer(modifier = Modifier.height(12.dp))
         Spacer(modifier = Modifier.width(8.dp))
-
 
         Column(verticalArrangement = Arrangement.SpaceAround) {
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Salman Khan", fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                Text(text = "10:00 AM", fontSize = 14.sp)
+                Text(text = chatlistModel.name, fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                Text(text = chatlistModel.time, fontSize = 14.sp)
             }
 
             Spacer(modifier = Modifier.height(4.dp))
 
-            Text(text = "Hello", color = Color.Gray, fontWeight = FontWeight.SemiBold)
+            Text(text = chatlistModel.msg, color = Color.Gray, fontWeight = FontWeight.SemiBold)
+
+
         }
     }
+    HorizontalDivider(
+        modifier = Modifier.padding(1.dp),
+        thickness = 2.dp,
+        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
+    )
 }
