@@ -31,59 +31,47 @@ import androidx.compose.ui.unit.sp
 @Composable
 @Preview(showSystemUi = true)
 fun topBar() {
-    Box(modifier = Modifier.fillMaxWidth()) {
-        Column() {
-            Spacer(modifier = Modifier.height(20.dp))
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(6.dp),
-                horizontalArrangement = Arrangement.Absolute.Left
-            ) {
-                Text(
-                    text = "Status",
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 30.sp,
-                    color = colorResource(id = R.color.LightGreen)
-                )
+    Column {
+        Spacer(modifier = Modifier.height(20.dp))
 
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(6.dp),
-                    horizontalArrangement = Arrangement.End
-                ) {
-                    IconButton(
-                        onClick = {},
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 12.dp, vertical = 6.dp),
+            horizontalArrangement = Arrangement.SpaceBetween,
+        ) {
+            // Left side: "Status"
+            Text(
+                text = "Status",
+                fontWeight = FontWeight.Bold,
+                fontSize = 30.sp,
+                color = colorResource(id = R.color.LightGreen)
+            )
 
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.search),
-                            contentDescription = null,
-                            modifier = Modifier.size(28.dp)
-                        )
+            // Right side: Icon buttons in a nested Row
+            Row {
+                IconButton(onClick = { }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.search),
+                        contentDescription = null,
+                        modifier = Modifier.size(24.dp)
+                    )
+                }
 
-                    }
-
-                    Spacer(modifier = Modifier.width(15.dp))
-
-                    IconButton(
-                        onClick = {}
-                    ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.more),
-                            contentDescription = null,
-                            modifier = Modifier.size(24.dp)
-                        )
-                    }
+                IconButton(onClick = { }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.more),
+                        contentDescription = null,
+                        modifier = Modifier.size(24.dp)
+                    )
                 }
             }
-
-            HorizontalDivider(
-                modifier = Modifier.padding(1.dp),
-                thickness = 2.dp,
-                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
-            )
         }
+
+        HorizontalDivider(
+            modifier = Modifier.padding(horizontal = 12.dp),
+            thickness = 2.dp,
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.1f)
+        )
     }
 }
