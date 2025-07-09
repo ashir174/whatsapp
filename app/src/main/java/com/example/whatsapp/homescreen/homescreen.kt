@@ -29,6 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.whatsapp.R
+import com.example.whatsapp.presentation.bottomNavigation.bottomNavigation
 import com.example.whatsapp.presentation.chat_box.ChatlistModel
 
 
@@ -89,7 +90,7 @@ fun HomeScreen() {
             R.drawable.trump,
             name = "Donald Trump",
             msg = "Noble Prize de b do saalo :)",
-            time = "5:43 PM"
+            time = "5:4 3 PM"
         ),
         ChatlistModel(
             R.drawable.thanos,
@@ -128,6 +129,9 @@ fun HomeScreen() {
 
                     )
             }
+        },
+        bottomBar = {
+            bottomNavigation()
         }
     ) {
         Column(modifier = Modifier.padding(it)) {
