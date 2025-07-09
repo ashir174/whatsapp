@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,17 +53,29 @@ fun topBar() {
                         .padding(6.dp),
                     horizontalArrangement = Arrangement.End
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.camera),
-                        contentDescription = null,
-                        modifier = Modifier.size(28.dp)
-                    )
-                    Spacer(modifier = Modifier.width(30.dp))
-                    Icon(
-                        painter = painterResource(id = R.drawable.more),
-                        contentDescription = null,
-                        modifier = Modifier.size(24.dp)
-                    )
+                    IconButton(
+                        onClick = {},
+
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.search),
+                            contentDescription = null,
+                            modifier = Modifier.size(28.dp)
+                        )
+
+                    }
+
+                    Spacer(modifier = Modifier.width(15.dp))
+
+                    IconButton(
+                        onClick = {}
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.more),
+                            contentDescription = null,
+                            modifier = Modifier.size(24.dp)
+                        )
+                    }
                 }
             }
 
